@@ -3,7 +3,8 @@
 #include "Util/ScreenUtil.h"
 #include "Util/StageUtil.h"
 
-const char* pStages[2] = { "IslandFleetGalaxy", "RedBlueExGalaxy" };
+//All bonus starship galaxies in here pls!
+const char* pStages[2] = { "IslandFleetGalaxy", "RedBlueExGalaxy" }; 
 
 void SceneChangeAreaControl(AreaObj *pArea)
 {
@@ -16,7 +17,7 @@ void SceneChangeAreaControl(AreaObj *pArea)
         if (pArea->mObjArg0 != -1)
             MR::goToGalaxy(pStages[pArea->mObjArg0]);
         else
-            MR::goToGalaxy("IslandFleetGalaxy");
+            MR::goToGalaxy("AsteroidGardenGalaxy"); //story galaxy here pls!
 
         pArea->mValidate = 0;
     }
