@@ -36125,3 +36125,6 @@ typeInfo__Q34nw4r3lyt7Picture=0x807D5DB8
 typeInfo__Q34nw4r3lyt7TextBox=0x807D5DC0
 typeInfo__Q34nw4r3lyt6Window=0x807D5DC8
 typeInfo__Q34nw4r3lyt8Bounding=0x807D5DD0
+
+PowerStarSetupColor__17DummyDisplayModelFPC7NameObjl=0x802DFA20
+getGravityVec__10MarioActorFv=0x803B8510
