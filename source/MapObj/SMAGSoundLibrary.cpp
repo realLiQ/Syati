@@ -39,6 +39,7 @@ void SMAGSoundLibrary::init(JMapInfoIter const& rIter) {
 	
 	MR::needStageSwitchWriteA(this, rIter);
 
+    counter = 0;
     initSound(1, "SMAGSoundLibrary", false, TVec3f(0.0f, 0.0f, 0.0f));
 	
 	if (obj_arg0 == -1) {
@@ -55,10 +56,20 @@ void SMAGSoundLibrary::movement() {
 
 	if (MR::isOnSwitchB(this)) {
         OSReport("SMAGSoundLibrary SW_B\n");
-        if (obj_arg0 == 0)
+        
+        if (obj_arg0 == 0) //ID0
         {
-            OSReport("should play\n");
-            MR::startSound(this, "SE_SY_TOTAL_COMPLETE", -1, -1);
+            if (counter == 0) { MR::startSound(this, "SE_SY_TOTAL_COMPLETE", -1, -1); }
+
+            if (counter >= 120)
+            {
+                if (obj_arg1 != 0)
+                {
+                    MR::onSwitchA(this);
+                }
+                makeActorDead();
+            }
+            counter++;
         }
         //else if () 
         
@@ -66,11 +77,6 @@ void SMAGSoundLibrary::movement() {
         //ADD OTHER SOUND EFFECTS HERE!
 
 
-
-        if (obj_arg1 != 0)
-        {
-            MR::onSwitchA(this);
-        }
-		makeActorDead();
+		
 	}
 }
