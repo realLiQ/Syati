@@ -1,4 +1,5 @@
 #include "syati.h"
+#include "System/GameDataFunction.h"
 
 typedef void (*Func)(void);
 
